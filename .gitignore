@@ -154,3 +154,4 @@ release_preview.md
 build-dir/
 flatpak-repo/
 *.flatpak
+.codegraph

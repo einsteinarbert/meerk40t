@@ -317,10 +317,15 @@ class RuidaEmulator:
                     self._describe(array, "Interface Speed")
                 elif array[2] == 0x06:
                     self._describe(array, "Interface Start/Pause")
-                    try:
-                        self.device.driver.pause()
-                    except AttributeError:
-                        pass
+                    if key == "Down" or key is None:
+                        try:
+                            # Start/Pause từ LightBurn: nếu đang pause thì resume, nếu đang chạy thì pause
+                            if getattr(self.device.driver, "paused", False):
+                                self.device.driver.resume()
+                            else:
+                                self.device.driver.pause()
+                        except AttributeError:
+                            pass
                 elif array[2] == 0x09:
                     self._describe(array, "Interface Stop")
                     try:

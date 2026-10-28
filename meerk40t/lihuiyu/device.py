@@ -1044,8 +1044,13 @@ class LihuiyuDevice(Service, Status):
 
         @self.console_command("resume", help=_("Resume Controller"))
         def pipe_resume(command, channel, _, **kwgs):
-            self.controller.update_state("active")
-            self.controller.start()
+            # Khôi phục hoạt động cho cả driver và controller
+            if self.driver.paused:
+                self.driver.resume()
+                self.signal("pause")
+            else:
+                self.controller.update_state("active")
+                self.controller.start()
             channel(_("Lihuiyu Channel Resumed."))
 
         @self.console_command("usb_connect", help=_("Connects USB"))

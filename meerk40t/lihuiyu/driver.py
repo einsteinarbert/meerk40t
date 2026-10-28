@@ -167,6 +167,9 @@ class LihuiyuDriver(Parameters):
         self.paused = False
 
         def primary_hold():
+            # Tạm dừng Spooler xử lý công việc mới khi máy đang trong trạng thái pause
+            if self.paused:
+                return True
             if self.out_pipe is None:
                 return True
             if hasattr(self.out_pipe, "is_shutdown") and self.out_pipe.is_shutdown:
@@ -296,6 +299,8 @@ class LihuiyuDriver(Parameters):
         Wants a status report of what the driver is doing.
         @return:
         """
+        if self.paused:
+            return (self.native_x, self.native_y), "hold", "paused"
         state_major = "idle"
         state_minor = "idle"
         if self.state == DRIVER_STATE_RAPID:
@@ -321,6 +326,7 @@ class LihuiyuDriver(Parameters):
 
         @return:
         """
+        # Gửi lệnh phần cứng PN để ngắt bước động cơ và tắt laser ngay lập tức
         self(b"~PN!\n~")
         self.paused = True
         self.service.signal("pause")
@@ -335,6 +341,7 @@ class LihuiyuDriver(Parameters):
         @param values:
         @return:
         """
+        # Gửi lệnh phần cứng PN để tiếp tục chạy và phục hồi trạng thái controller
         self(b"~PN&\n~")
         self.paused = False
         self.service.signal("pause")

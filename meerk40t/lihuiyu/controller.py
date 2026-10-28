@@ -435,18 +435,21 @@ class LihuiyuController:
         If this state change is done from INITIALIZE it will start the processing.
         Otherwise, it must be done from ACTIVE or IDLE.
         """
+        self.abort_waiting = True
         if self.state == "init":
             self.start()
             self.update_state("pause")
-        if self.state in ("active", "idle"):
+        elif self.state in ("active", "idle", "busy", "wait"):
             self.update_state("pause")
 
     def resume(self):
         """
         Resume can only be called from PAUSE.
         """
-        if self.state == "pause":
+        # Khôi phục trạng thái active từ pause hoặc busy và đánh thức luồng gửi dữ liệu
+        if self.state in ("pause", "busy"):
             self.update_state("active")
+            self.start()
 
     def abort(self):
         self._buffer = bytearray()
@@ -581,6 +584,11 @@ class LihuiyuController:
                 self.pre_ok = False
 
                 self.context.laser_status = "idle"
+                if self.state in ("pause", "busy", "suspend"):
+                    # Đang trong trạng thái pause, chờ lệnh resume thay vì ngắt và kết nối lại USB liên tục
+                    with self._loop_cond:
+                        self._loop_cond.wait()
+                    continue
                 time.sleep(0.5)
                 self.close()
                 continue
@@ -743,8 +751,11 @@ class LihuiyuController:
         # print (f"Packet: {packet!r} (len={len(packet)})"    )
         if len(packet) == 30:
             # We have a sendable packet.
-            if not self.pre_ok:
+            if not realtime and not self.pre_ok:
                 self.wait_until_accepting_packets()
+            if not realtime and self.state in ("pause", "busy"):
+                # Nếu vừa được yêu cầu pause trong khi chờ máy hoàn thành lệnh trước, không gửi tiếp
+                return False
             if default_checksum:
                 packet = b"\x00" + packet + bytes([onewire_crc_lookup(packet)])
             else:
@@ -772,11 +783,16 @@ class LihuiyuController:
                 if status == 0:
                     # We did not read a status.
                     continue
-                if status == STATUS_OK:
+                if status in (STATUS_OK, STATUS_FINISH, STATUS_SERIAL_CORRECT_M3_FINISH):
                     # Packet was fine.
                     self.pre_ok = True
                     break
                 elif status == STATUS_BUSY:
+                    if realtime:
+                        # Gói realtime (như PN pause/resume) gửi khi bo mạch đang bận hoặc tạm dừng.
+                        # Nhận phản hồi từ bo mạch là thành công, không lặp chờ STATUS_OK.
+                        self.pre_ok = False
+                        break
                     # Busy. We still do not have our confirmation. BUSY comes before ERROR or OK.
                     continue
                 elif status == STATUS_ERROR:
@@ -854,14 +870,35 @@ class LihuiyuController:
 
     def wait_until_accepting_packets(self):
         i = 0
-        while self.state != "terminate":
-            self.update_status()
+        while self.state not in ("terminate", "pause"):
+            try:
+                self.update_status()
+            except ConnectionError:
+                if self.state in ("pause", "terminate"):
+                    return
+                if i > 20:
+                    raise
+                time.sleep(0.05)
+                i += 1
+                continue
             if self._status is None:
-                raise ConnectionError
+                if self.state in ("pause", "terminate"):
+                    return
+                if i > 20:
+                    raise ConnectionError
+                time.sleep(0.05)
+                i += 1
+                continue
             status = self._status[1]
             if status == 0:
-                raise ConnectionError
-            if status == STATUS_OK:
+                if self.state in ("pause", "terminate"):
+                    return
+                if i > 20:
+                    raise ConnectionError
+                time.sleep(0.05)
+                i += 1
+                continue
+            if status in (STATUS_OK, STATUS_FINISH, STATUS_SERIAL_CORRECT_M3_FINISH):
                 self.pre_ok = False
                 break
             if status == STATUS_ERROR:

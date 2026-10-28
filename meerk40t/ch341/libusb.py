@@ -257,7 +257,10 @@ class Ch341LibusbDriver:
                 self.disconnect_detach(device, interface)
                 self.unclaim_interface(device, interface)
                 self.disconnect_dispose(device)
-                self.disconnect_reset(device)
+                # Không reset USB khi đóng: reset làm chân INIT# của CH341 toggle
+                # khiến board M2 Nano bị khởi động lại (CorelLASER không bao giờ reset).
+                if getattr(self, 'reset_on_close', False):
+                    self.disconnect_reset(device)
             except ConnectionError:
                 pass
 
