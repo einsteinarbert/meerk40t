@@ -556,6 +556,8 @@ class RDJob:
 
         self.x = 0.0
         self.y = 0.0
+        self.origin_x = 0.0
+        self.origin_y = 0.0
         self.z = 0.0
         self.u = 0.0
 
@@ -689,6 +691,30 @@ class RDJob:
         """
         return self._estimate
 
+    def _update_origin_from_driver(self, use_user_origin=False):
+        try:
+            target_pos = None
+            if use_user_origin:
+                if hasattr(self._driver, "user_origin") and self._driver.user_origin is not None:
+                    target_pos = self._driver.user_origin
+                elif hasattr(self._driver, "service") and getattr(self._driver.service, "user_origin", None) is not None:
+                    target_pos = self._driver.service.user_origin
+
+            if target_pos is None and self._driver is not None and hasattr(self._driver, "status"):
+                pos, state, minor = self._driver.status()
+                target_pos = pos
+
+            if target_pos is not None and self.units_to_device_matrix is not None:
+                x, y = self.units_to_device_matrix.point_in_inverse_space(target_pos)
+                self.origin_x = x / self.scale
+                self.origin_y = y / self.scale
+            else:
+                self.origin_x = 0.0
+                self.origin_y = 0.0
+        except Exception:
+            self.origin_x = 0.0
+            self.origin_y = 0.0
+
     def plot_location(self, x, y, power):
         """
         Adds this particular location to the current plotcut.
@@ -777,8 +803,8 @@ class RDJob:
                 desc = f"Axis Z Move {value}"
                 self.z += value
         elif array[0] == 0x88:  # 0b10001000 11 characters.
-            x = abscoord(array[1:6])
-            y = abscoord(array[6:11])
+            x = abscoord(array[1:6]) + self.origin_x
+            y = abscoord(array[6:11]) + self.origin_y
             self.plot_location(x * self.scale, y * self.scale, 0)
             desc = f"Move Absolute ({x}μm, {y}μm)"
         elif array[0] == 0x89:  # 0b10001001 5 characters
@@ -806,8 +832,8 @@ class RDJob:
             elif array[1] == 0x08:
                 desc = f"Axis U Move {value}"
         elif array[0] == 0xA8:  # 0b10101000 11 characters.
-            x = abscoord(array[1:6])
-            y = abscoord(array[6:11])
+            x = abscoord(array[1:6]) + self.origin_x
+            y = abscoord(array[6:11]) + self.origin_y
             self.plot_location(x * self.scale, y * self.scale, 1)
             desc = f"Cut Absolute ({x}μm, {y}μm)"
         elif array[0] == 0xA9:  # 0b10101001 5 characters
@@ -1068,10 +1094,14 @@ class RDJob:
                 desc = "Start Process"
             elif array[1] == 0x10:
                 desc = "Ref Point Mode 2, Machine Zero/Absolute Position"
+                self.origin_x = 0.0
+                self.origin_y = 0.0
             elif array[1] == 0x11:
                 desc = "Ref Point Mode 1, Anchor Point"
+                self._update_origin_from_driver(use_user_origin=True)
             elif array[1] == 0x12:
                 desc = "Ref Point Mode 0, Current Position"
+                self._update_origin_from_driver(use_user_origin=False)
         elif array[0] == 0xD9:
             if array[1] == 0x00:
                 opts = array[2]
