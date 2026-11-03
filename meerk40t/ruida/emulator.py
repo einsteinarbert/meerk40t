@@ -326,14 +326,19 @@ class RuidaEmulator:
                                 self.device.driver.pause()
                         except AttributeError:
                             pass
-                elif array[2] == 0x09:
-                    self._describe(array, "Interface Stop")
-                    try:
-                        self.device.driver.reset()
-                    except AttributeError:
-                        pass
-                elif array[2] == 0x5A:
-                    self._describe(array, "Interface Reset")
+                elif array[2] in (0x09, 0x5A):
+                    self._describe(array, "Interface Stop/Reset")
+                    if key == "Down" or key is None:
+                        try:
+                            # Dừng và xóa toàn bộ lệnh Ruida đang chờ xử lý
+                            if hasattr(self, "job") and self.job is not None:
+                                self.job.stop()
+                                self.job.clear()
+                            if hasattr(self.device, "spooler"):
+                                self.device.spooler.clear_queue()
+                            self.device.driver.reset()
+                        except AttributeError:
+                            pass
                 elif array[2] == 0x0F:
                     self._describe(array, "Interface Trace On/Off")
                 elif array[2] == 0x07:
@@ -372,8 +377,13 @@ class RuidaEmulator:
             elif array[1] == 0x01:
                 self._describe(array, "Stop Process")
                 try:
+                    # Dừng và xóa hàng đợi khi nhận lệnh dừng tiến trình
+                    if hasattr(self, "job") and self.job is not None:
+                        self.job.stop()
+                        self.job.clear()
+                    if hasattr(self.device, "spooler"):
+                        self.device.spooler.clear_queue()
                     self.device.driver.reset()
-                    self._home_device()
                 except AttributeError:
                     pass
                 return True

@@ -596,7 +596,9 @@ class RDJob:
                 return "Disabled"
 
     def clear(self):
-        self.buffer.clear()
+        with self.lock:
+            self.buffer.clear()
+        self._stopped = True
 
     def set_magic(self, magic):
         """
@@ -625,10 +627,12 @@ class RDJob:
         data = self.unswizzle(data)
         with self.lock:
             self.buffer.extend(parse_commands(data))
+            self._stopped = False
 
     def write_command(self, command):
         with self.lock:
             self.buffer.append(command)
+            self._stopped = False
 
     def file_sum(self):
         return sum([sum(list(g)) for g in self.buffer])
@@ -647,6 +651,9 @@ class RDJob:
         if self.time_started is None:
             self.time_started = time.time()
         with self.lock:
+            if not self.buffer:
+                self._stopped = True
+                return True
             command = self.buffer.pop(0)
         try:
             array = list(command)
@@ -657,8 +664,10 @@ class RDJob:
                 f"Could not process Ruida buffer, {self.buffer[:25]} with magic: {self.magic:02}"
             ) from e
         if not self.buffer:
-            # Buffer is empty now. Job is complete
+            # Buffer rỗng, công việc cắt hoàn thành
             self.runtime += time.time() - self.time_started
+            self.time_started = None
+            self.offset = 0
             self._stopped = True
             return True  # All steps were executed.
         return False
@@ -668,9 +677,14 @@ class RDJob:
         Stop this current laser-job, cannot be called from the spooler thread.
         @return:
         """
-        if not self._stopped:
+        if not self._stopped and self.time_started is not None:
             self.runtime += time.time() - self.time_started
+        self.time_started = None
+        self.offset = 0
         self._stopped = True
+        with self.lock:
+            # Xóa sạch hàng đợi lệnh Ruida khi dừng công việc
+            self.buffer.clear()
 
     def is_running(self):
         return not self._stopped
