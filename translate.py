@@ -35,6 +35,17 @@ try:
 except Exception:
     is_tty = False
 
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(errors="replace")
+    except Exception:
+        pass
+if hasattr(sys.stderr, "reconfigure"):
+    try:
+        sys.stderr.reconfigure(errors="replace")
+    except Exception:
+        pass
+
 # On Windows, enable ANSI VT processing when running in a real terminal.
 # This avoids a dependency on `colorama` by enabling terminal
 # virtual terminal (ANSI) processing via the Win32 API.
@@ -325,7 +336,7 @@ def create_mo_files(force: bool, locales: Set[str]) -> List[Tuple[str, List[str]
                         entries_seen.add(entry.msgid)
                     po.save_as_mofile(d + mo_file)
 
-                    details = f"{source_encoding} → utf-8"
+                    details = f"{source_encoding} -> utf-8"
                     if empty_entries > 0:
                         details += f", {empty_entries} empty"
                     if duplicate_entries > 0:

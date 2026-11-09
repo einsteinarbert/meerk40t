@@ -1,0 +1,231 @@
+ python meerk40t.py
+Element wxBitmapButton@0000020682F4A1D0 ("button", HWND=0000000000A30748) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@00000206FF6B8AD0 ("panel", HWND=0000000000070930).
+Element wxBitmapButton@0000020682F4E3F0 ("button", HWND=0000000000070996) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686313E10 ("panel", HWND=0000000000070994).
+Element wxSpinCtrl@00000206836EB750 ("wxSpinCtrl", HWND=000000000005099A) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686313E10 ("panel", HWND=0000000000070994).
+Element wxStaticText@00000206835EA140 (" ms", HWND=00000000000709AC) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686313E10 ("panel", HWND=0000000000070994).
+Element wxTextCtrl@0000020686243560 ("1000", HWND=000000000005099C) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686313E10 ("panel", HWND=0000000000070994).
+Element wxStaticText@00000206835E91F0 ("ppi", HWND=000000000005099E) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686313E10 ("panel", HWND=0000000000070994).
+Element wxTextCtrl@0000020686242F50 ("10mm", HWND=00000000000509D4) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686315D90 ("panel", HWND=00000000000509CA).
+Element wxListCtrl@0000020682EA2470 ("listCtrl", HWND=0000000000040A62) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686312BB0 ("panel", HWND=0000000000040A68).
+Element wxComboBox@00000206836D6B40 ("comboBox", HWND=0000000000040A72) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686315070 ("panel", HWND=0000000000040A78).
+Element wxButton@000002068633E920 ("Assign (+new)", HWND=0000000000040AB4) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686313B70 ("panel", HWND=0000000000040AAA).
+Element wxButton@000002068633CF40 ("Assign", HWND=0000000000040AB6) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686313B70 ("panel", HWND=0000000000040AAA).
+Element wxButton@000002068633E360 ("Enable", HWND=0000000000040A98) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686313B70 ("panel", HWND=0000000000040AAA).
+Element wxComboBox@000002068385DC20 ("comboBox", HWND=0000000000040A36) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686315310 ("panel", HWND=0000000000040A8A).
+Element wxButton@000002068633F4A0 ("button", HWND=0000000000040AB8) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686315310 ("panel", HWND=0000000000040A8A).
+Element wxCheckBox@00000206836EE070 ("Combine path segments", HWND=0000000000040B00) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxTextCtrl@00000206865E3020 ("", HWND=0000000000040B04) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206836EE360 ("Burn Inner First", HWND=0000000000040B10) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxTextCtrl@00000206865E1DF0 ("", HWND=0000000000040B14) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206861BC740 ("Group Inner Burns", HWND=0000000000040B16) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206861BB2B0 ("Reduce Travel Time", HWND=000000000032046A) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206861BAFC0 ("Burn Complete Subpaths", HWND=0000000000040A30) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206861BBE70 ("Merge Passes", HWND=0000000000040A22) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206861BC160 ("Merge Operations", HWND=0000000000040A1E) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206861BB5A0 ("Cluster raster objects", HWND=0000000000040A86) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxTextCtrl@00000206865E2A10 ("", HWND=0000000000040B06) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206861BB890 ("Keep effect lines together", HWND=0000000000040B1A) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206861BC450 ("Optimize internally", HWND=0000000000040B1C) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxCheckBox@00000206861BCA30 ("Reduce polyline details", HWND=0000000000040B20) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7300 ("scrolledpanel", HWND=0000000000040AFC).
+Element wxTextCtrl@00000206865E3630 ("10mm", HWND=0000000000040B6A) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@00000206863130F0 ("panel", HWND=0000000000040B64).
+Element wxBitmapButton@00000206863464C0 ("button", HWND=0000000000040B6E) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@00000206863140B0 ("panel", HWND=0000000000040B84).
+Element wxTextCtrl@00000206865E0BC0 ("", HWND=0000000000040B9A) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@00000206863162D0 ("panel", HWND=0000000000040B98).
+Element wxTextCtrl@00000206865E66B0 ("", HWND=0000000000040B9C) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@00000206863162D0 ("panel", HWND=0000000000040B98).
+Element wxTextCtrl@00000206865E5A90 ("", HWND=0000000000040B9E) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@00000206863162D0 ("panel", HWND=0000000000040B98).
+Element wxTextCtrl@00000206865E6CC0 ("", HWND=0000000000040BA0) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@00000206863162D0 ("panel", HWND=0000000000040B98).
+Element wxCheckBox@0000020686350A50 ("Snap to Element", HWND=0000000000040BFE) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7980 ("scrolledpanel", HWND=0000000000050BF8).
+Element wxCheckBox@0000020686351610 ("Snap to Grid", HWND=0000000000040BEC) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7980 ("scrolledpanel", HWND=0000000000050BF8).
+Element wxSlider@0000020686351900 ("slider", HWND=0000000000040BA8) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7980 ("scrolledpanel", HWND=0000000000050BF8).
+Element wxSlider@0000020686351BF0 ("slider", HWND=0000000000040C02) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7980 ("scrolledpanel", HWND=0000000000050BF8).
+Element wxCheckBox@0000020686350D40 ("Instant Snap Display", HWND=0000000000040C08) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7980 ("scrolledpanel", HWND=0000000000050BF8).
+Element wxCheckBox@00000206863521D0 ("Show snap line", HWND=0000000000050C0A) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7980 ("scrolledpanel", HWND=0000000000050BF8).
+Element wxSlider@0000020686351900 ("slider", HWND=0000000000040BA8) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E7980 ("scrolledpanel", HWND=0000000000050BF8).
+Element wxStaticText@0000020686564470 ("Position:", HWND=0000000000040C24) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316570 ("panel", HWND=0000000000040C2A).
+Element wxTextCtrl@00000206865E72D0 ("", HWND=0000000000040C0E) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316570 ("panel", HWND=0000000000040C2A).
+Element wxButton@0000020686651FE0 ("X", HWND=0000000000040C0C) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316570 ("panel", HWND=0000000000040C2A).
+Element wxButton@000002068664E380 ("Y", HWND=0000000000040C10) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316570 ("panel", HWND=0000000000040C2A).
+Element wxCheckBox@00000206866758A0 ("Left/Right Side", HWND=0000000000060C6A) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316810 ("panel", HWND=0000000000060C64).
+Element wxCheckBox@0000020686674700 ("Top/Bottom Side", HWND=0000000000060C6C) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316810 ("panel", HWND=0000000000060C64).
+Element wxCheckBox@0000020686674410 ("Center", HWND=0000000000080C6E) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316810 ("panel", HWND=0000000000060C64).
+Element wxComboBox@000002068385EEE0 ("comboBox", HWND=0000000000080C72) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316810 ("panel", HWND=0000000000060C64).
+Element wxComboBox@000002068385EBC0 ("comboBox", HWND=0000000000080C78) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316810 ("panel", HWND=0000000000060C64).
+Element wxButton@00000206866536E0 ("Load", HWND=0000000000080C7E) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316810 ("panel", HWND=0000000000060C64).
+Element wxButton@00000206866564E0 ("Save", HWND=0000000000080C80) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxPanel@0000020686316810 ("panel", HWND=0000000000060C64).
+Element wxCheckBox@0000020686723A80 ("check", HWND=0000000000050D54) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E6FC0 ("scrolledpanel", HWND=0000000000040AA4).
+..\..\src\msw\window.cpp(557): 'SetFocus' failed with error 0x00000057 (The parameter is incorrect.).
+Element wxCheckBox@00000206867234A0 ("check", HWND=0000000000320F00) of wxStaticBoxSizer should be created as child of its wxStaticBox and not of wxScrolledWindow@00000206834E6FC0 ("scrolledpanel", HWND=0000000000040AA4).
+MeerK40t crash log. Version: 0.9.9040 git lihuiyu-m2-nano on Windows: Python 3.10.11: AMD64 - wxPython: 4.3.2 msw (phoenix) wxWidgets 3.3.4
+TypeError: unsupported operand type(s) for -: 'float' and 'NoneType'
+  File "X:\workspace\meerk40t\meerk40t\ruida\rdjob.py", line 668, in execute
+    self.runtime += time.time() - self.time_started
+  File "X:\workspace\meerk40t\meerk40t\core\spoolers.py", line 573, in run
+    fully_executed = program.execute(self.driver)
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898, in run
+    func_result = func(*args)
+Traceback (most recent call last):
+
+Local variables:
+[X:\workspace\meerk40t\meerk40t\ruida\rdjob.py:668, in execute]:
+self : RDJob(0 lines)
+driver : LihuiyuDriver(lihuiyu-device)
+command : b'\xd7'
+array : [215]
+[X:\workspace\meerk40t\meerk40t\core\spoolers.py:573, in run]:
+self : Spooler(lihuiyu-device)
+is_valid : True
+idx : 0
+program : RDJob(0 lines)
+priority : 0
+fully_executed : False
+[X:\workspace\meerk40t\meerk40t\kernel\kernel.py:1898, in run]:
+func_result : None
+sys : <module 'sys' (built-in)>
+_ : <built-in function GetTranslation>
+args : ()
+channel : Channel('threads', buffer_size=0, line_end=None)
+func : <bound method Spooler.run of Spooler(lihuiyu-device)>
+result : <function Spooler.restart.<locals>.clear_thread at 0x000002068706AD40>
+self : Kernel(MeerK40t, MeerK40t, 0.9.9040 git lihuiyu-m2-nano)
+thread_name : Spooler(lhystudios)
+..\..\src\msw\window.cpp(557): 'SetFocus' failed with error 0x00000057 (The parameter is incorrect.).
+..\..\src\msw\window.cpp(557): 'SetFocus' failed with error 0x00000057 (The parameter is incorrect.).
+Windows fatal exception: code 0x80000003
+
+Thread 0x0000674c (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\lihuiyu\controller.py", line 558 in _thread_loop
+  File "X:\workspace\meerk40t\meerk40t\lihuiyu\controller.py", line 623 in _thread_data_send
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00007b4c (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\kernel\channel.py", line 246 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00007468 (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\kernel\channel.py", line 246 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00006c10 (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\kernel\channel.py", line 246 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x0000618c (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\kernel\channel.py", line 246 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00004410 (most recent call first):
+  File "X:\workspace\meerk40t\meerk40t\network\udp_server.py", line 96 in run_udp_listener
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00005228 (most recent call first):
+  File "X:\workspace\meerk40t\meerk40t\network\udp_server.py", line 96 in run_udp_listener
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x000029c8 (most recent call first):
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 2046 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00007c90 (most recent call first):
+  File "X:\workspace\meerk40t\meerk40t\gui\wxmeerk40t.py", line 1641 in handleGUIException
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1908 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Current thread 0x00004cbc (most recent call first):
+  File "X:\workspace\meerk40t\.venv\lib\site-packages\wx\core.py", line 2263 in MainLoop
+  File "X:\workspace\meerk40t\meerk40t\gui\plugin.py", line 718 in plugin
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 953 in set_kernel_lifecycle
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1243 in __call__
+  File "X:\workspace\meerk40t\meerk40t\main.py", line 265 in _exe
+  File "X:\workspace\meerk40t\meerk40t\main.py", line 214 in run
+  File "X:\workspace\meerk40t\meerk40t.py", line 11 in <module>
+Windows fatal exception: code 0x80000003
+
+Thread 0x0000674c (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\lihuiyu\controller.py", line 558 in _thread_loop
+  File "X:\workspace\meerk40t\meerk40t\lihuiyu\controller.py", line 623 in _thread_data_send
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00007b4c (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\kernel\channel.py", line 246 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00007468 (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\kernel\channel.py", line 246 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00006c10 (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\kernel\channel.py", line 246 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x0000618c (most recent call first):
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 320 in wait
+  File "X:\workspace\meerk40t\meerk40t\kernel\channel.py", line 246 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00004410 (most recent call first):
+  File "X:\workspace\meerk40t\meerk40t\network\udp_server.py", line 96 in run_udp_listener
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00005228 (most recent call first):
+  File "X:\workspace\meerk40t\meerk40t\network\udp_server.py", line 96 in run_udp_listener
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x000029c8 (most recent call first):
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 2046 in run
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1898 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Current thread 0x00007c90 (most recent call first):
+  File "X:\workspace\meerk40t\meerk40t\gui\wxmeerk40t.py", line 1641 in handleGUIException
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1908 in run
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016 in _bootstrap_inner
+  File "C:\Users\hieu1\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973 in _bootstrap
+
+Thread 0x00004cbc (most recent call first):
+  File "X:\workspace\meerk40t\.venv\lib\site-packages\wx\core.py", line 2263 in MainLoop
+  File "X:\workspace\meerk40t\meerk40t\gui\plugin.py", line 718 in plugin
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 953 in set_kernel_lifecycle
+  File "X:\workspace\meerk40t\meerk40t\kernel\kernel.py", line 1243 in __call__
+  File "X:\workspace\meerk40t\meerk40t\main.py", line 265 in _exe
+  File "X:\workspace\meerk40t\meerk40t\main.py", line 214 in run
+  File "X:\workspace\meerk40t\meerk40t.py", line 11 in <module>
